@@ -1,2 +1,2 @@
-# sf_DS
+# sf_data_science
 SF homework
