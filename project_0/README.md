@@ -57,4 +57,4 @@ guess-number-task.zip - архив с базовым решением задач
 ## Выводы
 Для решения подобных задач нужно использовать прием деления диапазона пополам и принципом "больше-меньше".
 
-arrow_up:[к оглавлению](https://github.com/rayennorv/sf_DS/blob/main/project_0/README.md#Оглавление)
+:arrow_up:[к оглавлению](https://github.com/rayennorv/sf_DS/blob/main/project_0/README.md#Оглавление)
