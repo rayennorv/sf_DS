@@ -13,17 +13,25 @@ def random_predict(number:int=1) -> int:
         int: число попыток
     """
     count = 0
-    
-    while True:
+    min = 1
+    max = 101
+    predict_number = np.random.randint(1,101) #предполагаемое число
+        
+    while predict_number != number:
         count += 1
-        predict_number = np.random.randint(1,101) #предполагаемое число
-        if number == predict_number:
-            break #выход из цикла, если угадали
-    return(count)
+        if predict_number > number:
+            max = predict_number
+            predict_number = (max + min) // 2
+        elif predict_number < number:
+            min = predict_number 
+            predict_number = (max + min) // 2 
+        else:
+            break
+    return count
 
 print(f'Количество попыток: {random_predict()}')
 
-def score_game(random_preict) -> int:
+def score_game(random_predict) -> int:
     """За какое количество попыток в среднем из 1000 подходов угадывает наш алгоритм
 
     Args:
@@ -38,7 +46,7 @@ def score_game(random_preict) -> int:
     random_array = np.random.randint(1, 101, size=(1000)) #загадали список чисел
     
     for number in random_array:
-        count_ls.append(random_predict(number))
+        count_ls.append(int(random_predict(number)))
         
     score = int(np.mean(count_ls)) #находим среднее количество попыток
     
